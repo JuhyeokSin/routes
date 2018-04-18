@@ -124,6 +124,7 @@ int main() {
 }
 
 /**
+* Member function of ShortestRoute class to get any route in between starting and ending cities
 * Read a constant read only char pointer 'from' for starting city
 * Read a constant read only char pointer 'to' for ending city
 * @param from variable to represent the starting city
@@ -157,10 +158,18 @@ Route ShortestRoute::anyRoute(const char* const from, const char* const to) {
   } catch(const char* err) {
     cout << err << endl;
   }
-
+  // Return a route with the given starting city and ending city
   return Route(anyRoute(from, legTo->startingCity), *legTo);
 }
 
+/**
+*
+*
+*
+*
+*
+*
+*/
 Route ShortestRoute::shortestRoute(const char* const from, const char* const to) {
   const int legSize = sizeof(legs) / sizeof(*legs);
   set<Route> routes;
